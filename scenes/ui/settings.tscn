@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://2huprryu27je"]
+
+[ext_resource type="Theme" uid="uid://pqoh4hxnkpps" path="res://scenes/ui/themes/theme.tres" id="1_8wfqe"]
+[ext_resource type="Texture2D" uid="uid://cysfrgpom6frm" path="res://assets/pxl-art/x.png" id="1_h175o"]
+[ext_resource type="Script" uid="uid://dpnidy5d1dpja" path="res://scenes/ui/scripts/settings.gd" id="1_ptynm"]
+[ext_resource type="PackedScene" uid="uid://cm6k0bsy24b3" path="res://scenes/ui/volume_slider.tscn" id="2_7pacj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptynm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncfhn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ob3hf"]
+
+[node name="Settings" type="Control" unique_id=1101125123]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ptynm")
+
+[node name="BackgroundColorRect" type="ColorRect" parent="." unique_id=2132156768]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(3.4172833e-06, 0.623498, 0.40621296, 1)
+
+[node name="ExitButton" type="Button" parent="." unique_id=631844564]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 4.0
+offset_bottom = 4.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_8wfqe")
+theme_override_constants/icon_max_width = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_ptynm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ncfhn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ob3hf")
+icon = ExtResource("1_h175o")
+flat = true
+
+[node name="AudioMargin" type="MarginContainer" parent="." unique_id=817301065]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -5.5
+offset_right = 32.0
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8wfqe")
+
+[node name="AudioVBoxContainer" type="VBoxContainer" parent="AudioMargin" unique_id=281461825]
+layout_mode = 2
+
+[node name="MasterLabel" type="Label" parent="AudioMargin/AudioVBoxContainer" unique_id=1549757095]
+layout_mode = 2
+text = "master"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Master" parent="AudioMargin/AudioVBoxContainer" unique_id=1270643190 instance=ExtResource("2_7pacj")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="MusicLabel" type="Label" parent="AudioMargin/AudioVBoxContainer" unique_id=1950241612]
+layout_mode = 2
+text = "music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" parent="AudioMargin/AudioVBoxContainer" unique_id=883709846 instance=ExtResource("2_7pacj")]
+layout_mode = 2
+bus_name = "music"
+
+[node name="SFXLabel" type="Label" parent="AudioMargin/AudioVBoxContainer" unique_id=1305159885]
+layout_mode = 2
+text = "sfx"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sfx" parent="AudioMargin/AudioVBoxContainer" unique_id=578065503 instance=ExtResource("2_7pacj")]
+layout_mode = 2
+bus_name = "sfx"
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

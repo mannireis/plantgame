@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8x0wroovrhpl"
+path="res://.godot/imported/21 marching INITIAL.wav-022e479ab6786a9ffc062bd7dd22bddd.sample"
+
+[deps]
+
+source_file="res://assets/music/Infinity Crystal_ Awakening wavs/21 marching INITIAL.wav"
+dest_files=["res://.godot/imported/21 marching INITIAL.wav-022e479ab6786a9ffc062bd7dd22bddd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bimotjj0gadws"]
+
+[ext_resource type="AudioStream" uid="uid://bjw62isaqoxl" path="res://assets/music/Infinity Crystal_ Awakening wavs/1 titles LOOP.wav" id="1_4f40c"]
+[ext_resource type="Script" uid="uid://js6bjyw71ddm" path="res://scenes/ui/scripts/music_ui.gd" id="1_nexcw"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=32098794]
+stream = ExtResource("1_4f40c")
+autoplay = true
+bus = &"music"
+script = ExtResource("1_nexcw")

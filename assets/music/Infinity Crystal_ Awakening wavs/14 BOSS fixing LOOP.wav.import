@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbndebom3evm"
+path="res://.godot/imported/14 BOSS fixing LOOP.wav-9bc889ed118b9270b3c825217be98fa4.sample"
+
+[deps]
+
+source_file="res://assets/music/Infinity Crystal_ Awakening wavs/14 BOSS fixing LOOP.wav"
+dest_files=["res://.godot/imported/14 BOSS fixing LOOP.wav-9bc889ed118b9270b3c825217be98fa4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

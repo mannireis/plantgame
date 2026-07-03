@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bhq40gkny52c8"
+path="res://.godot/imported/6 sunny LOOP.wav-71f306879b313eab3d34ba33cfb39475.sample"
+
+[deps]
+
+source_file="res://assets/music/Infinity Crystal_ Awakening wavs/6 sunny LOOP.wav"
+dest_files=["res://.godot/imported/6 sunny LOOP.wav-71f306879b313eab3d34ba33cfb39475.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

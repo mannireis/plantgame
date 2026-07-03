@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bjw62isaqoxl"
+path="res://.godot/imported/1 titles LOOP.wav-c90f63421fa3f468265bdc264ca50a3f.sample"
+
+[deps]
+
+source_file="res://assets/music/Infinity Crystal_ Awakening wavs/1 titles LOOP.wav"
+dest_files=["res://.godot/imported/1 titles LOOP.wav-c90f63421fa3f468265bdc264ca50a3f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

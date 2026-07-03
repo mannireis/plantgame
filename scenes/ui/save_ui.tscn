@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://yt8a1j5j5kef"]
+
+[ext_resource type="Theme" uid="uid://pqoh4hxnkpps" path="res://scenes/ui/themes/theme.tres" id="1_b0ly4"]
+[ext_resource type="Script" uid="uid://cwtmx3nge0a7g" path="res://scenes/ui/scripts/save_ui.gd" id="1_hh3jn"]
+[ext_resource type="Texture2D" uid="uid://cysfrgpom6frm" path="res://assets/pxl-art/x.png" id="3_sjyho"]
+[ext_resource type="StyleBox" uid="uid://bx4elsx6qo7dp" path="res://normal_x.tres" id="4_uatxq"]
+[ext_resource type="StyleBox" uid="uid://ch4muwwtschs2" path="res://pressed_x.tres" id="5_y7i8i"]
+[ext_resource type="StyleBox" uid="uid://bh6nj3iewbmi3" path="res://hover_x.tres" id="6_7kwfi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7i8i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kwfi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp0o0"]
+
+[node name="SaveUI" type="Control" unique_id=2021017439]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hh3jn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=918408588]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(3.4172833e-06, 0.623498, 0.40621296, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=718008297]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="ExitButton" type="Button" parent="MarginContainer" unique_id=665019654]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_b0ly4")
+theme_override_constants/icon_max_width = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_y7i8i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7kwfi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pp0o0")
+icon = ExtResource("3_sjyho")
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2080964725]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1648029683]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="SaveSlot1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2034215119]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme = ExtResource("1_b0ly4")
+text = "Save 1"
+
+[node name="DeleteButton1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=680466212]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_b0ly4")
+theme_override_constants/icon_max_width = 3
+theme_override_styles/normal = ExtResource("4_uatxq")
+theme_override_styles/pressed = ExtResource("5_y7i8i")
+theme_override_styles/hover = ExtResource("6_7kwfi")
+icon = ExtResource("3_sjyho")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1918691166]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="SaveSlot2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1280583715]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme = ExtResource("1_b0ly4")
+text = "save 2"
+
+[node name="DeleteButton2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=16609946]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_b0ly4")
+theme_override_constants/icon_max_width = 3
+theme_override_styles/normal = ExtResource("4_uatxq")
+theme_override_styles/pressed = ExtResource("5_y7i8i")
+theme_override_styles/hover = ExtResource("6_7kwfi")
+icon = ExtResource("3_sjyho")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=887430705]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="SaveSlot3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=379541881]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme = ExtResource("1_b0ly4")
+text = "save 3"
+
+[node name="DeleteButton3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1556822333]
+layout_mode = 2
+theme = ExtResource("1_b0ly4")
+theme_override_constants/icon_max_width = 3
+theme_override_styles/normal = ExtResource("4_uatxq")
+theme_override_styles/pressed = ExtResource("5_y7i8i")
+theme_override_styles/hover = ExtResource("6_7kwfi")
+icon = ExtResource("3_sjyho")
+
+[connection signal="pressed" from="MarginContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/SaveSlot1" to="." method="_on_save_slot_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/DeleteButton1" to="." method="_on_delete_button_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/SaveSlot2" to="." method="_on_save_slot_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/DeleteButton2" to="." method="_on_delete_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/SaveSlot3" to="." method="_on_save_slot_3_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/DeleteButton3" to="." method="_on_delete_button_3_pressed"]

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bir5bl7eup7bf"]
+
+[ext_resource type="Script" uid="uid://cspr5j3vgsv1w" path="res://scenes/ui/scripts/start.gd" id="1_2vdtq"]
+[ext_resource type="Theme" uid="uid://pqoh4hxnkpps" path="res://scenes/ui/themes/theme.tres" id="1_t5jgv"]
+
+[node name="Control" type="Control" unique_id=1017471385]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2vdtq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2044326891]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.62352943, 0.40784314, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1656544265]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -17.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2031774096]
+layout_mode = 2
+theme = ExtResource("1_t5jgv")
+alignment = 1
+
+[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1499355709]
+layout_mode = 2
+theme = ExtResource("1_t5jgv")
+text = "continue"
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer" unique_id=776129857]
+layout_mode = 2
+theme = ExtResource("1_t5jgv")
+text = "settings"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=810341659]
+layout_mode = 2
+theme = ExtResource("1_t5jgv")
+text = "exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

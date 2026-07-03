@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cv31ut1v5ejhd"
+path="res://.godot/imported/4 town LOOP.wav-81bd80b985e4003e7fac160ba1a8dec4.sample"
+
+[deps]
+
+source_file="res://assets/music/Infinity Crystal_ Awakening wavs/4 town LOOP.wav"
+dest_files=["res://.godot/imported/4 town LOOP.wav-81bd80b985e4003e7fac160ba1a8dec4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

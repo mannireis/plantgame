@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://041fbww6kvr7"]
+
+[ext_resource type="Script" uid="uid://bflq8f25uoqbv" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://dxta3xpo74jwf" path="res://scripts/grid.gd" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://cbvmd7xxjubuo" path="res://scenes/ui/scripts/main_ui.gd" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://cmix7m6wfmxxs" path="res://assets/pxl-art/cart.png" id="3_jyhfs"]
+[ext_resource type="FontFile" uid="uid://c8il1jga2kaen" path="res://assets/fonts/IttyBitty.ttf" id="3_tbgi4"]
+[ext_resource type="Theme" uid="uid://pqoh4hxnkpps" path="res://scenes/ui/themes/theme.tres" id="3_tefeu"]
+[ext_resource type="Texture2D" uid="uid://bexw60b58is31" path="res://assets/pxl-art/shopping_cart.png" id="6_o6xl0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyhfs"]
+content_margin_bottom = 2.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tefeu"]
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85g3d"]
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6xl0"]
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tipki"]
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_choun"]
+content_margin_bottom = 2.0
+
+[sub_resource type="Gradient" id="Gradient_0wfyh"]
+offsets = PackedFloat32Array(0.012048192, 0.46385542, 1)
+colors = PackedColorArray(0.23197812, 0.08265173, 0.0041385586, 1, 0.2926935, 0.109422006, 0.03625343, 1, 0.5658835, 0.23659363, 0.12747434, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0wfyh"]
+noise_type = 4
+fractal_lacunarity = 30.82
+fractal_gain = -0.495
+fractal_weighted_strength = 0.54
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sugp2"]
+width = 50
+height = 50
+noise = SubResource("FastNoiseLite_0wfyh")
+color_ramp = SubResource("Gradient_0wfyh")
+bump_strength = 8.6
+
+[node name="main" type="Node2D" unique_id=416083889]
+script = ExtResource("1_o5qli")
+
+[node name="UI" type="Control" parent="." unique_id=1359297594]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_jyhfs")
+
+[node name="ColorRect" type="ColorRect" parent="UI" unique_id=1658064906]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.62352943, 0.40784314, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=899886853]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 8.0
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="MoneyLabel" type="Label" parent="UI/MarginContainer" unique_id=1928565995]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("3_tefeu")
+text = "5c"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer" unique_id=1453596668]
+layout_mode = 2
+
+[node name="SaveMenu" type="MenuButton" parent="UI/MarginContainer/HBoxContainer" unique_id=847887125]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_tefeu")
+theme_override_fonts/font = ExtResource("3_tbgi4")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tefeu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_85g3d")
+icon = ExtResource("3_jyhfs")
+autowrap_trim_flags = 0
+icon_alignment = 1
+
+[node name="ShopMenu" type="MenuButton" parent="UI/MarginContainer/HBoxContainer" unique_id=1265205298]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_tefeu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o6xl0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tipki")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_choun")
+icon = ExtResource("6_o6xl0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1805790869]
+position = Vector2(32, 32)
+texture = SubResource("NoiseTexture2D_sugp2")
+
+[node name="grid" type="Node2D" parent="." unique_id=878745881]
+z_index = 1
+script = ExtResource("2_0wfyh")
+
+[node name="Timer" type="Timer" parent="." unique_id=324374981]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
