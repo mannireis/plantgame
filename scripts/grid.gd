@@ -38,7 +38,7 @@ func _input(event: InputEvent) -> void:
 			state = States.RUNNING
 			timer.start()
 			queue_redraw()
-			root.money -= 1
+			root.money -= 3
 			print(root.money)
 
 func _on_timer_timeout() -> void:
